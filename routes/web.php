@@ -8,5 +8,6 @@ Route::get('/', function () {
     return redirect('/news');
 });
 
-Route::get('/news',[newscontroller::class,'index'])->name('index');
-
+Route::get('/news',[newsController::class,'index'])->name('index');
+Route::get('/business',[newsController::class,'business'])->name('business');
+Route::get('/overige',[newsController::class,'overige'])->name('overige');

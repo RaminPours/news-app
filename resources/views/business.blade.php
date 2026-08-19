@@ -16,25 +16,25 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('index') }}">Tech Nieuws</a>
+            <a class="navbar-brand" href="{{ route('index') }}">Nieuws</a>
             <a class="navbar-brand" href="{{ route('business') }}">Business Nieuws</a>
             <a class="navbar-brand" href="{{ route('overige') }}">Overige</a>
         </div>
     </nav>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Tech Nieuws</h1>
+        <h1 class="text-center mb-4">Business Nieuws</h1>
         <div class="row">
-            @foreach ($techArticles['articles'] as $article)
+            @foreach ($businessArticles['articles'] as $article2)
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        @if ($article['urlToImage'])
-                            <img src="{{ $article['urlToImage'] }}" class="card-img-top" alt="...">
+                        @if ($article2['urlToImage'])
+                            <img src="{{ $article2['urlToImage'] }}" class="card-img-top" alt="...">
                         @endif
                         <div class="card-body">
-                            <h5 class="card-title">{{ $article['title'] }}</h5>
-                            <p class="card-text">{{ $article['description'] }}</p>
-                            <a href="{{ $article['url'] }}" target="_blank" class="btn btn-primary">Read More</a>
+                            <h5 class="card-title">{{ $article2['title'] }}</h5>
+                            <p class="card-text">{{ $article2['description'] }}</p>
+                            <a href="{{ $article2['url'] }}" target="_blank" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
                 </div>
