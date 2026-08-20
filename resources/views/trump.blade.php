@@ -16,39 +16,38 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <h2>✨</h2>
-
             <a class="navbar-brand" href="{{ route('index') }}">Tech Nieuws</a>
             <a class="navbar-brand" href="{{ route('business') }}">Business Nieuws</a>
             <a class="navbar-brand" href="{{ route('overige') }}">Overige</a>
             <a class="navbar-brand" href="{{ route('bitcoin') }}">Bitcoin Nieuws</a>
-            <a class="navbar-brand" href="{{ route('trump') }}">Trump Nieuws</a>
-             <a class="navbar-brand" href="{{ route('bbc') }}">BBC Nieuws</a>
+             <a class="navbar-brand" href="{{ route('trump') }}">Trump Nieuws</a>
+              <a class="navbar-brand" href="{{ route('bbc') }}">BBC Nieuws</a>
         </div>
     </nav>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Tech Nieuws</h1>
+        <h1 class="text-center mb-4">Trump Nieuws</h1>
         <div class="row">
-            @foreach ($techArticles['articles'] as $article)
+            @foreach ($trumpArticle['articles'] as $article5)
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        @if ($article['urlToImage'])
-                            <img src="{{ $article['urlToImage'] }}" class="card-img-top" alt="...">
+                        @if ($article5['urlToImage'])
+                            <img src="{{ $article5['urlToImage'] }}" class="card-img-top" alt="...">
                         @endif
                         <div class="card-body">
-                            <h5 class="card-title">{{ $article['title'] }}</h5>
-                            <p class="card-text">{{ $article['description'] }}</p>
-                            <a href="{{ $article['url'] }}" target="_blank" class="btn btn-primary">Read More</a>
+                            <h5 class="card-title">{{ $article5['title'] }}</h5>
+                            <p class="card-text">{{ $article5['description'] }}</p>
+                            <a href="{{ $article5['url'] }}" target="_blank" class="btn btn-primary">Read More</a>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
     
-    <footer class="bg-dark text-white text-center py-3 mt-6">
+    <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 News App. All rights reserved.</p>
     </footer>
 </body>
 
 </html>
+    

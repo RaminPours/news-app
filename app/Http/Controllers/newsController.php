@@ -21,7 +21,7 @@ class newscontroller extends Controller
     public function business()
     {
         $newsKey = env('API_KEY_NEWS');
-        $businessArticles = http::get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=' . $newsKey)->json();
+        $businessArticles = http::get('https://newsapi.org/v2/top-headlines?country=&category=business&apiKey=' . $newsKey)->json();
         return view('business', [
             'businessArticles' => $businessArticles
         ]);
@@ -35,4 +35,33 @@ class newscontroller extends Controller
             'overigeArticles' => $overigeArticles
         ]);
     }
+
+    public function bitcoin()
+    {
+        $newsKey = env('API_KEY_NEWS');
+        $bitcoinArticles = http::get('https://newsapi.org/v2/everything?q=bitcoin&apiKey=' . $newsKey)->json();
+        return view('bitcoin', [
+            'bitcoinArticles' => $bitcoinArticles
+        ]);
+    }
+
+    public function trump()
+    {
+        $newsKey = env('API_KEY_NEWS');
+        $trumpArticles = http::get('https://newsapi.org/v2/top-headlines?q=trump&apiKey=' . $newsKey)->json();
+        return view('trump', [
+            'trumpArticles' => $trumpArticles
+        ]);
+    }
+
+    public function bbc()
+    {
+        $newsKey = env('API_KEY_NEWS');
+        $bbcArticles = http::get('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=' . $newsKey)->json();
+        return view('bbc', [
+            'bbcArticles' => $bbcArticles
+        ]);
+    }
+
+    
 }
