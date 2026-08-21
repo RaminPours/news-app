@@ -62,6 +62,4 @@ class newscontroller extends Controller
             'bbcArticles' => $bbcArticles
         ]);
     }
-
-    
 }

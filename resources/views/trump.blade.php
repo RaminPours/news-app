@@ -14,21 +14,14 @@
 </head>
 <body class="bg-light text-2xl">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('index') }}">Tech Nieuws</a>
-            <a class="navbar-brand" href="{{ route('business') }}">Business Nieuws</a>
-            <a class="navbar-brand" href="{{ route('overige') }}">Overige</a>
-            <a class="navbar-brand" href="{{ route('bitcoin') }}">Bitcoin Nieuws</a>
-             <a class="navbar-brand" href="{{ route('trump') }}">Trump Nieuws</a>
-              <a class="navbar-brand" href="{{ route('bbc') }}">BBC Nieuws</a>
-        </div>
-    </nav>
 
+    @extends('layouts.app')
+
+    @section('content')
     <div class="container mt-5">
         <h1 class="text-center mb-4">Trump Nieuws</h1>
         <div class="row">
-            @foreach ($trumpArticle['articles'] as $article5)
+            @foreach ($trumpArticles['articles'] as $article5)
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
                         @if ($article5['urlToImage'])
@@ -43,10 +36,13 @@
                 </div>
             @endforeach
         </div>
+        @endsection
     
+    @section('foot')
     <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 News App. All rights reserved.</p>
     </footer>
+    @endsection
 </body>
 
 </html>

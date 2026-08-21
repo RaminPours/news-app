@@ -14,17 +14,9 @@
 </head>
 <body class="bg-light text-2xl">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('index') }}">Tech Nieuws</a>
-            <a class="navbar-brand" href="{{ route('business') }}">Business Nieuws</a>
-            <a class="navbar-brand" href="{{ route('overige') }}">Overige</a>
-            <a class="navbar-brand" href="{{ route('bitcoin') }}">Bitcoin Nieuws</a>
-             <a class="navbar-brand" href="{{ route('trump') }}">Trump Nieuws</a>
-              <a class="navbar-brand" href="{{ route('bbc') }}">BBC Nieuws</a>
-        </div>
-    </nav>
+    @extends('layouts.app')
 
+    @section('content')
     <div class="container mt-5">
         <h1 class="text-center mb-4">Business Nieuws</h1>
         <div class="row">
@@ -43,10 +35,13 @@
                 </div>
             @endforeach
         </div>
+        @endsection
     
+    @section('foot')
     <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 News App. All rights reserved.</p>
     </footer>
+    @endsection
 </body>
 
 </html>
